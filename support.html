@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Support AutCir</title>
+<meta name="description" content="How to support AutCir: survival games from €0 and real tools built with AI agents. Watching is free; tips and memberships keep it going.">
+<meta property="og:title" content="Support AutCir">
+<meta property="og:description" content="Survival games from €0 and real tools built with AI agents. Watching is free; tips and memberships keep it going.">
+<meta property="og:url" content="https://autcir.github.io/support">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap">
+<style>
+/* Same look as index.html: one column of plain text, links are the only color. */
+:root {
+  --bg: #f6f7f9; --fg: #15171a; --muted: #5d636e; --rule: #d9dde3; --link: #1d4ed8; --mark: #b45309;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0e1013; --fg: #e4e6ea; --muted: #8b929d; --rule: #262a31; --link: #8ab4ff; --mark: #f0b35a; color-scheme: dark; }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.75 var(--mono); }
+main { max-width: 74ch; margin: 0 auto; padding: 56px max(18px, env(safe-area-inset-right)) 72px max(18px, env(safe-area-inset-left)); }
+a { color: var(--link); text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--link) 35%, transparent); }
+a:hover, a:focus-visible { border-bottom-color: var(--link); outline: none; }
+a:focus-visible { background: color-mix(in srgb, var(--link) 15%, transparent); }
+h1 { font-size: 30px; line-height: 1.15; font-weight: 800; margin: 6px 0 4px; letter-spacing: -0.02em; }
+h2 { font-size: 13px; font-weight: 600; text-transform: lowercase; color: var(--muted); margin: 44px 0 10px; letter-spacing: .02em; }
+h2::before { content: "## "; color: var(--mark); }
+p { margin: 0 0 12px; }
+.prompt { color: var(--muted); font-size: 13px; }
+.prompt b { color: var(--mark); font-weight: 600; }
+.lead { font-size: 16px; }
+.meta { color: var(--muted); font-size: 13px; }
+ul.rows { list-style: none; margin: 0; padding: 0; }
+ul.rows li { display: grid; grid-template-columns: 17ch 1fr; gap: 0 2ch; padding: 7px 0; border-top: 1px dashed var(--rule); }
+ul.rows li:last-child { border-bottom: 1px dashed var(--rule); }
+ul.rows .k { font-weight: 600; overflow-wrap: anywhere; }
+ul.rows .v small { display: block; color: var(--muted); font-size: 12.5px; }
+hr { border: 0; border-top: 1px dashed var(--rule); margin: 40px 0 0; }
+footer { margin-top: 56px; color: var(--muted); font-size: 12.5px; }
+@media (max-width: 560px) {
+  body { font-size: 14px; }
+  main { padding-top: 36px; }
+  ul.rows li { grid-template-columns: 1fr; }
+  h1 { font-size: 26px; }
+}
+</style>
+</head>
+<body>
+<main>
+
+<div class="prompt"><b>autcir@studioloq</b>:~$ cat support.md</div>
+<h1>Support AutCir</h1>
+<p class="meta">Build · Play · Automate</p>
+
+<p class="lead">AutCir is a YouTube channel where survival games start from €0, and where I build real tools with
+AI agents. I play; a pipeline of agents does the editing, the voice, subtitles in six languages and the uploads.</p>
+
+<p>Watching is free and always will be. If you want to help it grow, here is how, from free to paid.</p>
+
+<h2>free</h2>
+<ul class="rows">
+  <li><span class="k">subscribe</span><span class="v"><a href="https://www.youtube.com/@autcir?sub_confirmation=1">youtube.com/@autcir</a><small>full episodes. Watching to the end helps more than anything else.</small></span></li>
+  <li><span class="k">short clips</span><span class="v"><a href="https://www.tiktok.com/@autcir_">tiktok.com/@autcir_</a><small>one 30-second moment a day from the series.</small></span></li>
+  <li><span class="k">share</span><span class="v">send an episode to one friend who plays Farming Simulator<small>new channels grow by word of mouth.</small></span></li>
+</ul>
+
+<h2>tips</h2>
+<ul class="rows">
+  <li><span class="k">ko-fi</span><span class="v"><a href="https://ko-fi.com/autcir">ko-fi.com/autcir</a><small>a one-off tip. No account needed.</small></span></li>
+</ul>
+
+<h2>membership</h2>
+<ul class="rows">
+  <li><span class="k">patreon</span><span class="v"><a href="https://www.patreon.com/AutCir">patreon.com/AutCir</a><small>follow for free now. Paid tiers for the vibe coding community will open later; nothing is behind a paywall yet.</small></span></li>
+</ul>
+
+<h2>what stays free</h2>
+<p>Every episode, and any save file or setup I share from the series. Game mods are never sold or locked:
+that is the rule of the people who make Farming Simulator, and I follow it.</p>
+
+<hr>
+<footer>
+  <p><a href="index.html">autcir.github.io</a> · <a href="privacy.html">privacy</a> · <a href="terms.html">terms</a></p>
+  <p>© 2026 Ciro Autuori · plain HTML, no analytics, no cookies</p>
+</footer>
+
+</main>
+</body>
+</html>
