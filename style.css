@@ -57,7 +57,7 @@ code, pre, .mono { font-family: var(--mono); }
 /* ultimi video */
 ul.video { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px; }
 ul.video a { display: block; text-decoration: none; }
-ul.video img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; }
+ul.video img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; }
 ul.video a:hover img { border-color: var(--accent-line); }
 ul.video .vt { display: block; margin-top: 8px; font-weight: 600; line-height: 1.4; }
 ul.video a:hover .vt { text-decoration: underline; text-decoration-color: var(--accent-line); text-decoration-thickness: 2px; text-underline-offset: 3px; }
