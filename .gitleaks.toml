@@ -1,0 +1,10 @@
+# gitleaks per il sito AutCir: regole di serie, più un'eccezione sola.
+# Il token di Cloudflare Web Analytics (data-cf-beacon) è pubblico per costruzione: sta in ogni pagina e serve solo
+# a contare le visite di autcir.studiocentos.com. Non dà accesso a niente.
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Cloudflare Web Analytics beacon (token pubblico)"
+regexTarget = "line"
+regexes = ['''data-cf-beacon='\{"token": "[0-9a-f]{32}"\}''']

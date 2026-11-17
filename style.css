@@ -1,0 +1,102 @@
+/* AutCir, stile «Officina 2» (cbrain: Decisione - Stile Officina 2 leggibile, 17/11/2026).
+   Il giallo è marchio e azione: tasti principali con scritta scura, avatar, un dettaglio. Mai testo giallo.
+   Link = testo normale con sottolineatura ocra. Inter per il testo, JetBrains Mono solo per comandi, codice, numeri.
+   Due temi che seguono il sistema (prefers-color-scheme). */
+:root {
+  --bg: #f8f7f3; --surface: #ffffff; --fg: #1d1f1a; --muted: #5f5d54; --rule: #e2dfd5;
+  --accent: #f2b33d; --on-accent: #15160f; --accent-line: #8a6100;
+  --sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #1b1d19; --surface: #23251f; --fg: #dcd8cc; --muted: #9a978b; --rule: #34362f; --accent-line: #c9932f; }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; background: var(--bg); }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.65 var(--sans); }
+main { max-width: 42rem; margin: 0 auto; padding: 12px max(16px, env(safe-area-inset-right)) 72px max(16px, env(safe-area-inset-left)); }
+a { color: inherit; text-decoration: underline; text-decoration-color: var(--accent-line); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { text-decoration-color: var(--fg); }
+a:focus-visible { outline: 2px solid var(--accent-line); outline-offset: 3px; text-decoration: none; }
+h1 { font-size: 32px; line-height: 1.15; font-weight: 800; margin: 6px 0 4px; letter-spacing: -0.02em; }
+h2 { font-size: 13px; font-weight: 600; color: var(--muted); margin: 48px 0 12px; letter-spacing: .01em; }
+p { margin: 0 0 12px; }
+code, pre, .mono { font-family: var(--mono); }
+.prompt { font: 13px/1.5 var(--mono); color: var(--muted); }
+.prompt b { color: var(--fg); font-weight: 600; }
+.lead { font-size: 18px; line-height: 1.6; }
+.meta { color: var(--muted); font-size: 14px; }
+
+/* barra in alto: riga di comando a sinistra, lingua a destra */
+.top { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 48px; }
+.lang { display: inline-flex; align-items: center; justify-content: center; min-width: 48px; min-height: 48px; }
+.lang a { font-size: 13px; font-weight: 600; text-decoration: none; border: 1px solid var(--rule); border-radius: 6px; padding: 5px 10px; }
+.lang a:hover { border-color: var(--accent-line); }
+
+/* chi: avatar e nome */
+.who { display: grid; grid-template-columns: 96px 1fr; gap: 18px; align-items: center; margin: 10px 0 18px; }
+.who img { display: block; width: 96px; height: 96px; }
+.who h1 { font-size: 36px; margin: 0; }
+.who p { margin: 2px 0 0; font-size: 16px; line-height: 1.45; }
+.who p span { color: var(--muted); font-size: 14px; }
+
+/* i tre tasti gialli */
+.cta { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 10px; }
+.cta a { display: flex; justify-content: space-between; align-items: center; min-height: 64px; padding: 12px 18px;
+  background: var(--accent); color: var(--on-accent); text-decoration: none; border-radius: 10px;
+  font-weight: 700; font-size: 18px; line-height: 1.25; }
+.cta a small { display: block; font-weight: 400; font-size: 14px; margin-top: 3px; }
+.cta a::after { content: ""; flex: none; width: 9px; height: 18px; background: var(--on-accent); margin-left: 14px; border-radius: 1px; }
+.cta a:hover { background: #f6c25e; }
+.cta a:hover::after { animation: blink 1.1s steps(1) infinite; }
+.cta a:focus-visible { outline: 3px solid var(--fg); outline-offset: 3px; }
+@keyframes blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .cta a:hover::after { animation: none; } }
+
+/* ultimi video */
+ul.video { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px; }
+ul.video a { display: block; text-decoration: none; }
+ul.video img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; }
+ul.video a:hover img { border-color: var(--accent-line); }
+ul.video .vt { display: block; margin-top: 8px; font-weight: 600; line-height: 1.4; }
+ul.video a:hover .vt { text-decoration: underline; text-decoration-color: var(--accent-line); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+ul.video time { display: block; color: var(--muted); font-size: 13px; }
+.vuoto { color: var(--muted); }
+
+/* gruppi di link */
+.groups { display: grid; gap: 8px; }
+.groups ul { list-style: none; margin: 0; padding: 0; }
+.groups li a { display: flex; align-items: center; min-height: 48px; border-bottom: 1px solid var(--rule); text-decoration: none; font-weight: 500; }
+.groups li a:hover { border-bottom-color: var(--accent-line); }
+.groups li a span { color: var(--muted); font-size: 14px; font-weight: 400; margin-left: auto; padding-left: 12px; }
+
+/* righe (progetti, open source, pagine interne) */
+ul.rows { list-style: none; margin: 0; padding: 0; }
+ul.rows li { display: grid; grid-template-columns: 11rem 1fr; gap: 0 1.25rem; padding: 10px 0; border-top: 1px solid var(--rule); }
+ul.rows li:last-child { border-bottom: 1px solid var(--rule); }
+ul.rows .k { font-weight: 600; overflow-wrap: anywhere; }
+ul.rows .v { min-width: 0; }
+ul.rows .v small { display: block; color: var(--muted); font-size: 14px; }
+.stars { font-family: var(--mono); font-size: 13px; font-variant-numeric: tabular-nums; }
+.now { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 18px; }
+.now p:last-child { margin-bottom: 0; }
+pre { font: 13px/1.7 var(--mono); color: var(--muted); margin: 0; overflow-x: auto; background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 44px 0 0; }
+footer { margin-top: 32px; color: var(--muted); font-size: 14px; }
+footer a { display: inline-block; padding: 8px 0; }
+.mail { font-size: 18px; font-weight: 600; }
+
+@media (max-width: 560px) {
+  ul.rows li { grid-template-columns: 1fr; }
+  .who { grid-template-columns: 80px 1fr; gap: 14px; }
+  .who img { width: 80px; height: 80px; }
+  .who h1 { font-size: 32px; }
+  .lead { font-size: 17px; }
+}
+@media (min-width: 720px) {
+  main { padding-top: 40px; }
+  ul.video { grid-template-columns: 1fr 1fr; }
+  .groups { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .groups li a span { display: none; }
+}

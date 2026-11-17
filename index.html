@@ -1,136 +1,156 @@
 <!doctype html>
-<html lang="en">
+<html lang="it">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ciro Autuori · autcir</title>
-<meta name="description" content="Ciro Autuori (autcir): founder of StudioCentOS, building er0s, a sovereign agent engine in Rust. Open source, Arch Linux, AI agents. Salerno × Barcelona.">
-<meta property="og:title" content="Ciro Autuori · autcir">
-<meta property="og:description" content="Sovereign software, AI agents, Arch Linux. Salerno × Barcelona.">
-<meta property="og:url" content="https://autcir.github.io/">
+<title>AutCir · tool di AI provati davvero</title>
+<meta name="description" content="AutCir: vibe coding e automazione con l'AI, in italiano. Provo davvero i tool di AI su lavori veri, errori compresi. Di Ciro Autuori, StudioCentOS.">
+<link rel="canonical" href="https://autcir.studiocentos.com/">
+<link rel="alternate" hreflang="it" href="https://autcir.studiocentos.com/">
+<link rel="alternate" hreflang="en" href="https://autcir.studiocentos.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://autcir.studiocentos.com/">
+<meta property="og:title" content="AutCir · tool di AI provati davvero">
+<meta property="og:description" content="Vibe coding e automazione con l'AI, in italiano: provo davvero i tool su lavori veri, errori compresi.">
+<meta property="og:url" content="https://autcir.studiocentos.com/">
+<meta property="og:locale" content="it_IT">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:title" content="AutCir · tool di AI provati davvero">
+<meta name="twitter:description" content="Vibe coding e automazione con l'AI, in italiano: provo davvero i tool su lavori veri, errori compresi.">
 <link rel="me" href="https://github.com/autcir">
 <link rel="me" href="https://x.com/autcir">
 <link rel="me" href="https://www.instagram.com/autcir/">
 <link rel="me" href="https://www.reddit.com/user/ciroautuori/">
 <link rel="me" href="https://www.youtube.com/@autcir">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap">
-<style>
-/* One column of plain text, like a README you can read top to bottom. Links are the only color. */
-:root {
-  --bg: #121411; --fg: #ece9df; --muted: #9b9a90; --rule: #2a2c26; --link: #f2b33d; --mark: #f2b33d;
-  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
-}
-@media (prefers-color-scheme: dark) {
-  :root { --bg: #121411; --fg: #ece9df; --muted: #9b9a90; --rule: #2a2c26; --link: #f2b33d; --mark: #f2b33d; color-scheme: dark; }
-}
-* { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.75 var(--mono); }
-main { max-width: 74ch; margin: 0 auto; padding: 56px max(18px, env(safe-area-inset-right)) 72px max(18px, env(safe-area-inset-left)); }
-a { color: var(--link); text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--link) 35%, transparent); }
-a:hover, a:focus-visible { border-bottom-color: var(--link); outline: none; }
-a:focus-visible { background: color-mix(in srgb, var(--link) 15%, transparent); }
-h1 { font-size: 30px; line-height: 1.15; font-weight: 800; margin: 6px 0 4px; letter-spacing: -0.02em; }
-h2 { font-size: 13px; font-weight: 600; text-transform: lowercase; color: var(--muted); margin: 44px 0 10px; letter-spacing: .02em; }
-h2::before { content: "## "; color: var(--mark); }
-p { margin: 0 0 12px; }
-.prompt { color: var(--muted); font-size: 13px; }
-.prompt b { color: var(--mark); font-weight: 600; }
-.cursor { display: inline-block; width: .6em; height: 1.05em; vertical-align: -0.15em; background: var(--fg); margin-left: 2px; animation: blink 1.1s steps(1) infinite; }
-@keyframes blink { 50% { opacity: 0; } }
-@media (prefers-reduced-motion: reduce) { .cursor { animation: none; } }
-.lead { font-size: 16px; }
-.meta { color: var(--muted); font-size: 13px; }
-.links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 14px; font-size: 14px; }
-hr { border: 0; border-top: 1px dashed var(--rule); margin: 40px 0 0; }
-ul.rows { list-style: none; margin: 0; padding: 0; }
-ul.rows li { display: grid; grid-template-columns: 17ch 1fr; gap: 0 2ch; padding: 7px 0; border-top: 1px dashed var(--rule); }
-ul.rows li:last-child { border-bottom: 1px dashed var(--rule); }
-ul.rows .k { font-weight: 600; overflow-wrap: anywhere; }
-ul.rows .v { color: var(--fg); min-width: 0; }
-ul.rows .v small { display: block; color: var(--muted); font-size: 12.5px; }
-.stars { color: var(--mark); font-variant-numeric: tabular-nums; }
-.now { border-left: 2px solid var(--mark); padding-left: 2ch; }
-pre { font: inherit; font-size: 13px; color: var(--muted); margin: 0; overflow-x: auto; }
-footer { margin-top: 56px; color: var(--muted); font-size: 12.5px; }
-@media (max-width: 560px) {
-  body { font-size: 14px; }
-  main { padding-top: 36px; }
-  ul.rows li { grid-template-columns: 1fr; }
-  h1 { font-size: 26px; }
-}
-</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="img/avatar-192.png" type="image/png">
+<meta name="theme-color" content="#f8f7f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1b1d19" media="(prefers-color-scheme: dark)">
+<meta property="og:site_name" content="AutCir">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://autcir.studiocentos.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AutCir: tool di AI provati davvero">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@autcir">
+<meta name="twitter:image" content="https://autcir.studiocentos.com/img/og.png">
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "d283405b8be24a3fba5f334cd611d1de"}'></script>
 </head>
 <body>
 <main>
 
-<div class="prompt"><b>autcir@studioloq</b>:~$ whoami<span class="cursor" aria-hidden="true"></span></div>
-<h1>Ciro Autuori</h1>
-<p class="meta">autcir · founder <a href="https://studiocentos.com">@StudioCentOS</a> · Salerno × Barcelona</p>
-
-<p class="lead">I build sovereign software: your server, your data, your code. Most days that means a Rust agent engine,
-a few Linux machines tuned by hand, and AI agents doing the parts I would rather not type twice.</p>
-
-<div class="links">
-  <a href="https://github.com/autcir" rel="me">github</a>
-  <a href="https://x.com/autcir" rel="me">x</a>
-  <a href="https://www.youtube.com/@autcir" rel="me">youtube</a>
-  <a href="https://www.reddit.com/user/ciroautuori/" rel="me">reddit</a>
-  <a href="https://www.instagram.com/autcir/" rel="me">instagram</a>
-  <a href="https://linkedin.com/in/ciroautuori">linkedin</a>
-  <a href="https://studiocentos.com">studiocentos.com</a>
-  <a href="support.html">support autcir</a>
-  <a href="collabora.html">collabora (brands)</a>
+<div class="top">
+  <div class="prompt"><b>autcir@studioloq</b>:~$ whoami</div>
+  <div class="lang"><a href="en/" hreflang="en" lang="en" title="English version">EN</a></div>
 </div>
 
-<h2>now</h2>
+<div class="who">
+  <picture>
+    <source srcset="img/avatar-192.webp" type="image/webp">
+    <img src="img/avatar-192.png" width="96" height="96" alt="Avatar di AutCir: Ciro disegnato, braccia incrociate">
+  </picture>
+  <div>
+    <h1>AutCir</h1>
+    <p>Vibe coding e automazione con l'AI<br><span>di Ciro · <a href="https://studiocentos.com">StudioCentOS</a></span></p>
+  </div>
+</div>
+
+<p class="lead">Provo davvero i tool di AI su lavori veri: software costruito con agenti AI, automazioni per
+professionisti e piccole aziende. Ti faccio vedere cosa funziona, cosa si rompe e quanto tempo ti fa risparmiare.</p>
+
+<ul class="cta">
+  <li><a data-ultimo href="https://www.youtube.com/@autcir/videos"><span>Guarda l'ultimo video<small>su YouTube, in italiano</small></span></a></li>
+  <li><a href="https://www.patreon.com/AutCir/posts/generatore-di-mi-175543773"><span>Regalo gratis<small>il generatore di preventivi del video, pronto da usare</small></span></a></li>
+  <li><a href="https://studiocentos.com/prenota"><span>Prenota una call<small>gratis: un sito, un bot o un agente AI per te</small></span></a></li>
+</ul>
+
+<h2>ultimi video</h2>
+<!-- video:inizio -->
+<p class="vuoto">Il primo video di vibe coding sta per uscire. Intanto c'è <a href="https://www.youtube.com/@autcir">il canale</a>.</p>
+<!-- video:fine -->
+
+<div class="groups">
+  <section>
+    <h2>guarda</h2>
+    <ul>
+      <li><a href="https://www.youtube.com/@autcir" rel="me">YouTube<span>@autcir</span></a></li>
+      <li><a href="https://www.youtube.com/playlist?list=PLRyxrvOBVhNk">Vibe coding<span>playlist</span></a></li>
+      <li><a href="https://www.tiktok.com/@autcir_">TikTok<span>@autcir_</span></a></li>
+    </ul>
+  </section>
+  <section>
+    <h2>lavora con noi</h2>
+    <ul>
+      <li><a href="https://studiocentos.com/prenota">Prenota una call<span>gratis</span></a></li>
+      <li><a href="https://studiocentos.com">StudioCentOS<span>siti, bot, AI</span></a></li>
+      <li><a href="collabora.html">Collabora<span>marchi</span></a></li>
+    </ul>
+  </section>
+  <section>
+    <h2>segui</h2>
+    <ul>
+      <li><a href="https://www.patreon.com/AutCir">Patreon<span>community</span></a></li>
+      <li><a href="https://github.com/autcir" rel="me">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/ciroautuori">LinkedIn</a></li>
+      <li><a href="https://x.com/autcir" rel="me">X</a></li>
+      <li><a href="https://www.instagram.com/autcir/" rel="me">Instagram</a></li>
+      <li><a href="https://www.reddit.com/user/ciroautuori/" rel="me">Reddit</a></li>
+    </ul>
+  </section>
+</div>
+
+<h2>chi sono</h2>
+<p>Sono Ciro Autuori, fondatore di <a href="https://studiocentos.com">StudioCentOS</a>. Vivo tra Salerno e Barcellona.
+Costruisco software sovrano: il tuo server, i tuoi dati, il tuo codice. Quasi ogni giorno vuol dire un motore di
+agenti in Rust, qualche macchina Linux sistemata a mano e agenti AI che fanno le cose che non voglio scrivere due volte.</p>
+<p>AutCir è il mio banco di prova pubblico. Quello che funziona lo usiamo anche per i clienti; quello che non
+funziona lo dico. I video sono in italiano, con sottotitoli in inglese, tedesco, francese, spagnolo e
+polacco. Quando c'è da giocare, gioca l'AI.</p>
+
 <div class="now">
-  <p><b>er0s</b>: a sovereign agent engine in Rust. A deterministic kernel does the math without model calls; six agent
-    roles (CEO, CFO, CTO, COO, CBO, CLO) share one Brain; a human approval gate sits in front of anything that matters.
-    Multi-tenant, fail-closed, delivered on your own European server.</p>
-  <p><b>AutCir</b>: a YouTube channel, in Italian, where I test AI tools and automation on real work: vibe coding
-    with AI agents, automations for professionals and small businesses, and what breaks along the way. It is also
-    where I show what StudioCentOS builds. When there is gaming, the AI plays.</p>
-  <p class="meta">updated november 2026</p>
+  <p><b>er0s</b>: un motore di agenti sovrano in Rust. Un nucleo deterministico fa i conti senza chiamare modelli;
+    sei ruoli (CEO, CFO, CTO, COO, CBO, CLO) condividono un solo cervello; prima di ogni cosa importante c'è
+    l'approvazione di una persona. Multi-cliente, si ferma se qualcosa non torna, gira sul tuo server europeo.</p>
+  <p class="meta">aggiornato a novembre 2026</p>
 </div>
 
-<h2>systems</h2>
+<h2>progetti</h2>
 <ul class="rows">
-  <li><span class="k">er0s</span><span class="v"><a href="https://er0s.studiocentos.com">er0s.studiocentos.com</a><small>agent engine: kernel, permissions, memory, guardrails. no vendored forks.</small></span></li>
-  <li><span class="k">StudioCentOS</span><span class="v"><a href="https://studiocentos.com">studiocentos.com</a><small>AI venture studio and bespoke software for professional studios, shipped with source code.</small></span></li>
-  <li><span class="k">my0s</span><span class="v"><a href="https://my0s.com">my0s.com</a><small>personal OS for one-person companies: portfolio, bookings and payments in one place.</small></span></li>
-  <li><span class="k">salernos</span><span class="v"><a href="https://salernos.it">salernos.it</a><small>city platform for Salerno: mobility, civic passes on the EUDI wallet, events, transit.</small></span></li>
-  <li><span class="k">markettina</span><span class="v"><a href="https://markettina.com">markettina.com</a> (paused)<small>tech and desk products that passed a field-use test.</small></span></li>
+  <li><span class="k">StudioCentOS</span><span class="v"><a href="https://studiocentos.com">studiocentos.com</a><small>studio di software e AI su misura per studi professionali e piccole aziende, consegnato col codice sorgente.</small></span></li>
+  <li><span class="k">er0s</span><span class="v"><a href="https://er0s.studiocentos.com">er0s.studiocentos.com</a><small>motore di agenti: nucleo, permessi, memoria, regole di sicurezza.</small></span></li>
+  <li><span class="k">my0s</span><span class="v"><a href="https://my0s.com">my0s.com</a><small>il sistema per chi lavora da solo: portfolio, prenotazioni e pagamenti in un posto.</small></span></li>
+  <li><span class="k">SalernOS</span><span class="v"><a href="https://salernos.it">salernos.it</a><small>la piattaforma della città di Salerno: mobilità, eventi, trasporti, pass civici sul wallet EUDI.</small></span></li>
+  <li><span class="k">libri EROS</span><span class="v"><a href="https://studiocentos.com/books">studiocentos.com/books</a><small>manuali tecnici e laboratori, in italiano.</small></span></li>
 </ul>
 
 <h2>open source</h2>
 <ul class="rows" id="repos">
-  <li><span class="k"><a href="https://github.com/autcir/openvidia">openvidia</a></span><span class="v">Multi-key proxy for NVIDIA NIM with a native desktop dashboard: key rotation, cooldowns, RPM limits. Works with Claude Code, Codex CLI and opencode. <small>python · <span class="stars" data-repo="openvidia">★9</span></small></span></li>
-  <li><span class="k"><a href="https://github.com/autcir/whispy">whispy</a></span><span class="v">Hold a key, speak, release: text lands at your cursor. Offline-first voice dictation for Linux (whisper.cpp, Faster-Whisper, Groq, OpenAI). <small>python · <span class="stars" data-repo="whispy">★0</span></small></span></li>
-  <li><span class="k"><a href="https://github.com/autcir/archloq">archloq</a></span><span class="v">One-command Arch Linux for the Lenovo LOQ 17IRX10: RTX 5060 (Blackwell), power, fan and CPU tuning, Wayland dotfiles. <small>shell · <span class="stars" data-repo="archloq">★0</span></small></span></li>
-  <li><span class="k"><a href="https://github.com/autcir/archlegion">archlegion</a></span><span class="v">Arch Linux DevOps workstation for the Lenovo Legion: GPU switching, NVIDIA Optimus, hardening. <small>shell · <span class="stars" data-repo="archlegion">★2</span></small></span></li>
-  <li><span class="k"><a href="https://github.com/autcir/awesome-salerno">awesome-salerno</a></span><span class="v">A curated list for Salerno, the Amalfi Coast and the Cilento. <small>list · <span class="stars" data-repo="awesome-salerno">★0</span></small></span></li>
+  <li><span class="k"><a href="https://github.com/autcir/openvidia">openvidia</a></span><span class="v">Proxy con più chiavi per NVIDIA NIM e pannello desktop: rotazione delle chiavi, pause, limiti al minuto. Funziona con Claude Code, Codex CLI e opencode. <small>python · <span class="stars" data-repo="openvidia">★9</span></small></span></li>
+  <li><span class="k"><a href="https://github.com/autcir/whispy">whispy</a></span><span class="v">Tieni premuto un tasto, parla, lascia: il testo arriva dove c'è il cursore. Dettatura vocale per Linux che funziona anche offline. <small>python · <span class="stars" data-repo="whispy">★0</span></small></span></li>
+  <li><span class="k"><a href="https://github.com/autcir/archloq">archloq</a></span><span class="v">Arch Linux con un comando per il Lenovo LOQ 17IRX10: RTX 5060, consumi, ventole, CPU, Wayland. <small>shell · <span class="stars" data-repo="archloq">★0</span></small></span></li>
+  <li><span class="k"><a href="https://github.com/autcir/archlegion">archlegion</a></span><span class="v">Postazione DevOps Arch Linux per il Lenovo Legion: cambio GPU, NVIDIA Optimus, sicurezza. <small>shell · <span class="stars" data-repo="archlegion">★2</span></small></span></li>
+  <li><span class="k"><a href="https://github.com/autcir/awesome-salerno">awesome-salerno</a></span><span class="v">Una lista curata per Salerno, la Costiera Amalfitana e il Cilento. <small>lista · <span class="stars" data-repo="awesome-salerno">★0</span></small></span></li>
 </ul>
 
-<h2>stack</h2>
-<p>Rust · Python · TypeScript · Next.js · FastAPI · PostgreSQL · Qdrant · Docker</p>
-
-<h2>setup</h2>
-<pre>os      Arch Linux, Omarchy, Hyprland
-box     Lenovo LOQ 17 · i7-13700HX · RTX 5060
-agents  Claude Code · Codex · opencode · NVIDIA NIM via openvidia
-video   OBS, HyperFrames, an AI pipeline for edit, voice and subtitles</pre>
+<h2>attrezzi</h2>
+<pre>sistema  Arch Linux, Omarchy, Hyprland
+pc       Lenovo LOQ 17 · i7-13700HX · RTX 5060
+agenti   Claude Code · Codex · opencode · NVIDIA NIM con openvidia
+video    OBS, HyperFrames, una pipeline AI per montaggio, voce e sottotitoli
+codice   Rust · Python · TypeScript · Next.js · FastAPI · PostgreSQL · Qdrant · Docker</pre>
 
 <hr>
 <footer>
-  <p>AutCir Studio, the private tool behind the YouTube channel: <a href="privacy.html">privacy</a> · <a href="terms.html">terms</a></p>
-  <p>© 2026 Ciro Autuori · plain HTML, no analytics, no cookies</p>
+  <p><a href="support.html">sostieni AutCir</a> · <a href="collabora.html">collabora</a> · <a href="privacy.html">privacy</a> · <a href="terms.html">termini</a></p>
+  <p>© 2026 Ciro Autuori · HTML semplice, nessun cookie, statistiche anonime senza cookie (Cloudflare Web Analytics)</p>
 </footer>
 
 </main>
 <script>
-// Live star counts from the public GitHub API; the static numbers stay if the request fails.
+// Stelle dal GitHub pubblico; se la richiesta fallisce restano i numeri scritti.
 fetch("https://api.github.com/users/autcir/repos?per_page=100")
   .then(function (r) { return r.ok ? r.json() : []; })
   .then(function (repos) {

@@ -7,53 +7,35 @@
 <meta name="description" content="AutCir: tool di AI provati davvero, in italiano. Spazi sponsor, recensioni e prodotti da testare, sempre dichiarati. Numeri veri, aggiornati ogni settimana.">
 <meta property="og:title" content="Collabora con AutCir">
 <meta property="og:description" content="Tool di AI provati davvero, in italiano. Sponsor, recensioni e prodotti da testare, sempre dichiarati.">
-<meta property="og:url" content="https://autcir.github.io/collabora">
+<meta property="og:url" content="https://autcir.studiocentos.com/collabora">
+<link rel="canonical" href="https://autcir.studiocentos.com/collabora">
+<meta property="og:locale" content="it_IT">
+<meta property="og:locale:alternate" content="en_US">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap">
-<style>
-/* Same look as index.html and support.html: one column of plain text, links are the only color. */
-:root {
-  --bg: #121411; --fg: #ece9df; --muted: #9b9a90; --rule: #2a2c26; --link: #f2b33d; --mark: #f2b33d;
-  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
-}
-@media (prefers-color-scheme: dark) {
-  :root { --bg: #121411; --fg: #ece9df; --muted: #9b9a90; --rule: #2a2c26; --link: #f2b33d; --mark: #f2b33d; color-scheme: dark; }
-}
-* { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.75 var(--mono); }
-main { max-width: 74ch; margin: 0 auto; padding: 56px max(18px, env(safe-area-inset-right)) 72px max(18px, env(safe-area-inset-left)); }
-a { color: var(--link); text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--link) 35%, transparent); }
-a:hover, a:focus-visible { border-bottom-color: var(--link); outline: none; }
-a:focus-visible { background: color-mix(in srgb, var(--link) 15%, transparent); }
-h1 { font-size: 30px; line-height: 1.15; font-weight: 800; margin: 6px 0 4px; letter-spacing: -0.02em; }
-h2 { font-size: 13px; font-weight: 600; text-transform: lowercase; color: var(--muted); margin: 44px 0 10px; letter-spacing: .02em; }
-h2::before { content: "## "; color: var(--mark); }
-p { margin: 0 0 12px; }
-.prompt { color: var(--muted); font-size: 13px; }
-.prompt b { color: var(--mark); font-weight: 600; }
-.lead { font-size: 16px; }
-.meta { color: var(--muted); font-size: 13px; }
-.mail { font-size: 17px; font-weight: 600; }
-ul.rows { list-style: none; margin: 0; padding: 0; }
-ul.rows li { display: grid; grid-template-columns: 17ch 1fr; gap: 0 2ch; padding: 7px 0; border-top: 1px dashed var(--rule); }
-ul.rows li:last-child { border-bottom: 1px dashed var(--rule); }
-ul.rows .k { font-weight: 600; overflow-wrap: anywhere; }
-ul.rows .v small { display: block; color: var(--muted); font-size: 12.5px; }
-hr { border: 0; border-top: 1px dashed var(--rule); margin: 40px 0 0; }
-footer { margin-top: 56px; color: var(--muted); font-size: 12.5px; }
-@media (max-width: 560px) {
-  body { font-size: 14px; }
-  main { padding-top: 36px; }
-  ul.rows li { grid-template-columns: 1fr; }
-  h1 { font-size: 26px; }
-}
-</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="img/avatar-192.png" type="image/png">
+<meta name="theme-color" content="#f8f7f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1b1d19" media="(prefers-color-scheme: dark)">
+<meta property="og:site_name" content="AutCir">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://autcir.studiocentos.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AutCir: tool di AI provati davvero">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@autcir">
+<meta name="twitter:image" content="https://autcir.studiocentos.com/img/og.png">
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "d283405b8be24a3fba5f334cd611d1de"}'></script>
 </head>
 <body>
 <main>
 
-<div class="prompt"><b>autcir@studioloq</b>:~$ cat collabora.md</div>
+<div class="top">
+  <div class="prompt"><b>autcir@studioloq</b>:~$ cat collabora.md</div>
+  <div class="lang"><a href="#english" hreflang="en" lang="en">EN</a></div>
+</div>
 <h1>Collabora con AutCir</h1>
 <p class="meta">Sponsor · recensioni · prodotti da testare · <a href="#english">english below</a></p>
 
@@ -121,8 +103,8 @@ The numbers above are real and updated every week; the channel is new and growin
 
 <hr>
 <footer>
-  <p><a href="index.html">autcir.github.io</a> · <a href="support.html">support</a> · <a href="privacy.html">privacy</a> · <a href="terms.html">terms</a></p>
-  <p>© 2026 Ciro Autuori · plain HTML, no analytics, no cookies</p>
+  <p><a href="./">AutCir</a> · <a href="support.html">sostieni</a> · <a href="en/support.html">support (en)</a> · <a href="privacy.html">privacy</a> · <a href="terms.html">terms</a></p>
+  <p>© 2026 Ciro Autuori · HTML semplice, nessun cookie, statistiche anonime senza cookie (Cloudflare Web Analytics)</p>
 </footer>
 
 </main>
